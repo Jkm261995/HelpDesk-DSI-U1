@@ -1,0 +1,36 @@
+1) Actores que interactúan con el sistema:
+
+*Usuario final: Personal del Data Center que detecta y reporta incidentes de hardware, red o software.
+
+
+*Técnico de soporte: Especialista encargado de recibir, analizar y resolver el fallo.
+
+*Administrador de sistemas:
+Gestiona la infraestructura global, asigna recursos y supervisa los tiempos de resolución.
+
+
+2) Requerimientos Funcionales
+Estas son las acciones que el software debe realizar obligatoriamente
+
+*Crear ticket: 
+El sistema debe permitir el ingreso de nuevos incidentes.   
+
+*Categorizar fallo:
+ Clasificar automáticamente si es un problema de Red, Hardware o Software (aquí es donde usaremos el patrón Factory Method más adelante).  
+
+ *Asignar técnico:
+  Vincular el ticket con un especialista disponible según el área del fallo. 
+
+3)Requerimientos No Funcionales
+características de calidad del sistema:
+
+Escalabilidad: El sistema debe soportar un aumento en el volumen de tickets sin perder rendimiento.
+
+Mantenibilidad: Estructura modular que facilite actualizaciones futuras.
+
+Trazabilidad: Registro detallado de quién hizo qué y cuándo en cada ticket (flujo de versiones).
+
+
+
+
+
