@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Desk - Historial de Tickets</title>
+</head>
+<body>
+
+    <header>
+        <h1>Help Desk Data Center</h1>
+        <p>Sistema de Gestión de Incidentes Técnicos</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio (Dashboard)</a></li>
+            <li><a href="reportar.html">Reportar Incidente</a></li>
+            <li><a href="tickets.html"><strong>Ver Historial de Tickets</strong></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Historial General de Incidentes Reportados</h2>
+            <p>A continuación se muestran los tickets registrados en la plataforma. Este panel se actualiza en tiempo real reflejando los estados de asignación de soporte.</p>
+            
+            <table border="1">
+                <caption>Monitoreo Activo de Fallos en el Data Center</caption>
+                <thead>
+                    <tr>
+                        <th id="th-id">ID Ticket</th>
+                        <th id="th-user">Usuario</th>
+                        <th id="th-cat">Categoría</th>
+                        <th id="th-desc">Descripción</th>
+                        <th id="th-status">Estado Actual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="th-id">TK-2026-001</td>
+                        <td headers="th-user">Juan Minaya</td>
+                        <td headers="th-cat">Red</td>
+                        <td headers="th-desc">Pérdida de paquetes en el switch principal del rack B12.</td>
+                        <td headers="th-status"><strong>En Proceso</strong></td>
+                    </tr>
+                    <tr>
+                        <td headers="th-id">TK-2026-002</td>
+                        <td headers="th-user">Ana Rodríguez</td>
+                        <td headers="th-cat">Hardware</td>
+                        <td headers="th-desc">Alerta de sobrecalentamiento en el nodo de almacenamiento 04.</td>
+                        <td headers="th-status"><em>Abierto</em></td>
+                    </tr>
+                    <tr>
+                        <td headers="th-id">TK-2026-003</td>
+                        <td headers="th-user">Carlos Mendoza</td>
+                        <td headers="th-cat">Software</td>
+                        <td headers="th-desc">Error 500 en el despliegue del microservicio de autenticación.</td>
+                        <td headers="th-status">Resuelto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Data Center Corp. Estructura modular diseñada bajo validaciones semánticas.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Desk - Reportar Incidente</title>
+</head>
+<body>
+
+    <header>
+        <h1>Help Desk Data Center</h1>
+        <p>Sistema de Gestión de Incidentes Técnicos</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio (Dashboard)</a></li>
+            <li><a href="reportar.html"><strong>Reportar Incidente</strong></a></li>
+            <li><a href="tickets.html">Ver Historial de Tickets</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Formulario de Registro de Incidentes</h2>
+            <p>Por favor, complete todos los campos requeridos para enviar el reporte. La asignación del técnico se procesará de acuerdo con la categoría seleccionada.</p>
+            
+            <form action="tickets.html" method="GET">
+                
+                <div>
+                    <label for="txtUsuario">Nombre del Usuario Afectado:</label>
+                    <input type="text" id="txtUsuario" name="usuario" required placeholder="Ej. Juan Minaya">
+                </div>
+
+                <div>
+                    <label for="cmbCategoria">Categoría del Incidente:</label>
+                    <select id="cmbCategoria" name="categoria" required>
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="hardware">Incidente de Hardware (Servidores / Almacenamiento)</option>
+                        <option value="software">Incidente de Software (Sistemas / S.O. / BD)</option>
+                        <option value="red">Incidente de Red (Conectividad / Enrutadores)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="txtDescripcion">Descripción Breve del Fallo:</label>
+                    <textarea id="txtDescripcion" name="descripcion" rows="4" cols="50" minlength="10" maxlength="500" required placeholder="Describa el problema con un mínimo de 10 caracteres..."></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Enviar Reporte (Generar Ticket)</button>
+                    <button type="reset">Limpiar Formulario</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Data Center Corp. Estructura bajo estándares W3C y pautas de accesibilidad.</p>
+    </footer>
+
+</body>
+</html>
