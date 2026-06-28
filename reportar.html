@@ -7,11 +7,13 @@
 </head>
 <body>
 
+    <!-- CABECERA: Identificador del sistema web -->
     <header>
         <h1>Help Desk Data Center</h1>
         <p>Sistema de Gestión de Incidentes Técnicos</p>
     </header>
 
+    <!-- MENÚ DE NAVEGACIÓN: Interconexión con las otras páginas -->
     <nav>
         <ul>
             <li><a href="index.html">Inicio (Dashboard)</a></li>
@@ -20,18 +22,22 @@
         </ul>
     </nav>
 
+    <!-- CONTENIDO PRINCIPAL: Contenedor del formulario de envío -->
     <main>
         <section>
             <h2>Formulario de Registro de Incidentes</h2>
-            <p>Por favor, complete todos los campos requeridos para enviar el reporte. La asignación del técnico se procesará de acuerdo con la categoría seleccionada.</p>
+            <p>Por favor, complete todos los campos requeridos para enviar el reporte.</p>
             
+            <!-- FORMULARIO: Recolecta los datos y los envía a tickets.html al presionar el botón -->
             <form action="tickets.html" method="GET">
                 
+                <!-- CAMPO 1: Entrada de texto obligatoria para el nombre del usuario -->
                 <div>
                     <label for="txtUsuario">Nombre del Usuario Afectado:</label>
                     <input type="text" id="txtUsuario" name="usuario" required placeholder="Ej. Juan Minaya">
                 </div>
 
+                <!-- CAMPO 2: Lista desplegable vinculada al patrón Factory Method (Hardware/Software/Red) -->
                 <div>
                     <label for="cmbCategoria">Categoría del Incidente:</label>
                     <select id="cmbCategoria" name="categoria" required>
@@ -42,11 +48,13 @@
                     </select>
                 </div>
 
+                <!-- CAMPO 3: Cuadro de texto grande para la descripción con límites de caracteres -->
                 <div>
                     <label for="txtDescripcion">Descripción Breve del Fallo:</label>
                     <textarea id="txtDescripcion" name="descripcion" rows="4" cols="50" minlength="10" maxlength="500" required placeholder="Describa el problema con un mínimo de 10 caracteres..."></textarea>
                 </div>
 
+                <!-- BOTONES: Controles para enviar el formulario o borrar todo el contenido escrito -->
                 <div>
                     <button type="submit">Enviar Reporte (Generar Ticket)</button>
                     <button type="reset">Limpiar Formulario</button>
@@ -56,6 +64,7 @@
         </section>
     </main>
 
+    <!-- PIE DE PÁGINA: Nota legal de accesibilidad -->
     <footer>
         <p>&copy; 2026 Data Center Corp. Estructura bajo estándares W3C y pautas de accesibilidad.</p>
     </footer>

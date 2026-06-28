@@ -7,11 +7,13 @@
 </head>
 <body>
 
+    <!-- CABECERA: Título superior estándar -->
     <header>
         <h1>Help Desk Data Center</h1>
         <p>Sistema de Gestión de Incidentes Técnicos</p>
     </header>
 
+    <!-- MENÚ DE NAVEGACIÓN: Enlaces activos del portal web -->
     <nav>
         <ul>
             <li><a href="index.html">Inicio (Dashboard)</a></li>
@@ -20,13 +22,17 @@
         </ul>
     </nav>
 
+    <!-- CONTENIDO PRINCIPAL: Contenedor de la tabla operativa -->
     <main>
         <section>
             <h2>Historial General de Incidentes Reportados</h2>
-            <p>A continuación se muestran los tickets registrados en la plataforma. Este panel se actualiza en tiempo real reflejando los estados de asignación de soporte.</p>
+            <p>A continuación se muestran los tickets registrados en la plataforma.</p>
             
-            <table border="1">
+            <!-- TABLA DE DATOS: Estructura HTML5 limpia sin atributos de borde obsoletos -->
+            <table>
                 <caption>Monitoreo Activo de Fallos en el Data Center</caption>
+                
+                <!-- ENCABEZADO DE TABLA: Define los nombres de las columnas -->
                 <thead>
                     <tr>
                         <th id="th-id">ID Ticket</th>
@@ -36,7 +42,10 @@
                         <th id="th-status">Estado Actual</th>
                     </tr>
                 </thead>
+                
+                <!-- CUERPO DE TABLA: Contiene las filas con los datos simulados (Singleton/Observer) -->
                 <tbody>
+                    <!-- FILA 1: Simulación de un incidente del área de redes -->
                     <tr>
                         <td headers="th-id">TK-2026-001</td>
                         <td headers="th-user">Juan Minaya</td>
@@ -44,6 +53,7 @@
                         <td headers="th-desc">Pérdida de paquetes en el switch principal del rack B12.</td>
                         <td headers="th-status"><strong>En Proceso</strong></td>
                     </tr>
+                    <!-- FILA 2: Simulación de un incidente de infraestructura física -->
                     <tr>
                         <td headers="th-id">TK-2026-002</td>
                         <td headers="th-user">Ana Rodríguez</td>
@@ -51,6 +61,7 @@
                         <td headers="th-desc">Alerta de sobrecalentamiento en el nodo de almacenamiento 04.</td>
                         <td headers="th-status"><em>Abierto</em></td>
                     </tr>
+                    <!-- FILA 3: Simulación de un incidente en la capa del sistema de software -->
                     <tr>
                         <td headers="th-id">TK-2026-003</td>
                         <td headers="th-user">Carlos Mendoza</td>
@@ -63,6 +74,7 @@
         </section>
     </main>
 
+    <!-- PIE DE PÁGINA: Cierre estructural de la página web -->
     <footer>
         <p>&copy; 2026 Data Center Corp. Estructura modular diseñada bajo validaciones semánticas.</p>
     </footer>
