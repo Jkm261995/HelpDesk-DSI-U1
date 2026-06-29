@@ -4,20 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design System - UI Kit Help Desk</title>
-    <!-- Vinculación con nuestra hoja de estilos CSS externa -->
+    <!-- Vinculación con nuestra hoja de estilos CSS avanzada -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos temporales exclusivos para ordenar las secciones del catálogo de pruebas */
+        .demo-section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .demo-section h2 {
+            margin-bottom: 15px;
+            color: #1e3a8a;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 5px;
+        }
+        .demo-flex {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Biblioteca de Componentes UI (Design System)</h1>
-        <p>Línea gráfica oficial para el Sistema de Gestión de Incidentes - UTM</p>
+    <header style="margin-bottom: 30px; border-bottom: 3px solid var(--color-primario); padding-bottom: 15px;">
+        <h1>Help Desk - Sistema de Diseño UI (UI Kit)</h1>
+        <p>Biblioteca oficial de componentes reutilizables | Régimen Universitario UTM</p>
     </header>
 
     <main>
-        <!-- Los bloques para los componentes exigidos (Botones, Formularios, Tarjetas, Alertas) los construiremos en el siguiente paso -->
-        <p>Estructura base lista para inyectar los componentes estilizados.</p>
+
+        <!-- 1. SECCIÓN DE BOTONES -->
+        <section class="demo-section">
+            <h2>1. Componentes de Botones y Estados (:hover, :focus)</h2>
+            <p style="margin-bottom: 15px; color: var(--color-secundario);">Pruebe pasar el cursor encima o hacer clic en los controles para ver las transiciones visuales.</p>
+            <div class="demo-flex">
+                <button class="btn btn-primary">Botón Primario</button>
+                <button class="btn btn-secondary">Botón Secundario</button>
+                <button class="btn btn-danger">Botón de Peligro</button>
+            </div>
+        </section>
+
+        <!-- 2. SECCIÓN DE FORMULARIOS -->
+        <section class="demo-section">
+            <h2>2. Elementos de Formulario (Inputs y Selects)</h2>
+            <form onsubmit="return false;" style="max-width: 500px;">
+                <div class="form-group">
+                    <label for="inputDemo">Campo de Entrada de Texto (Haga clic para sombreado):</label>
+                    <input type="text" id="inputDemo" class="form-control" placeholder="Ejemplo de foco interactivo...">
+                </div>
+                <div class="form-group">
+                    <label for="selectDemo">Lista Desplegable Estilizada:</label>
+                    <select id="selectDemo" class="form-control">
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="1">Opción de Infraestructura de Hardware</option>
+                        <option value="2">Opción de Servicios de Software</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <!-- 3. SECCIÓN DE ALERTAS / BADGES -->
+        <section class="demo-section">
+            <h2>3. Alertas de Prioridad (Badges Cohesivos)</h2>
+            <p style="margin-bottom: 15px; color: var(--color-secundario);">Etiquetas compactas para la categorización rápida de incidentes en tiempo real.</p>
+            <div class="demo-flex">
+                <span class="badge badge-alta">Prioridad Alta</span>
+                <span class="badge badge-media">Prioridad Media</span>
+                <span class="badge badge-baja">Prioridad Baja</span>
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN DE TARJETAS -->
+        <section class="demo-section">
+            <h2>4. Contenedores de Información (Cards para Tickets)</h2>
+            <div style="max-width: 600px;">
+                <!-- Tarjeta Maquetada con box-shadow y bordes redondeados -->
+                <article class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <span style="font-weight: bold; color: var(--color-secundario);">TK-2026-045</span>
+                        <span class="badge badge-alta">Alta</span>
+                    </div>
+                    <h3 class="card-title">Fallo Crítico en Servidor Base de Datos NoSQL</h3>
+                    <p style="margin-bottom: 15px; font-size: 14px;">Se detectó una degradación en el tiempo de respuesta del clúster principal afectando las peticiones de los usuarios en la UTM.</p>
+                    <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                        <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;">Ignorar Alerta</button>
+                        <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;">Asignar Técnico</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
     </main>
+
+    <footer style="margin-top: 50px; text-align: center; color: var(--color-secundario); font-size: 12px;">
+        <p>&copy; 2026 Entorno Universitario de Desarrollo - Documentación del Prototipo.</p>
+    </footer>
 
 </body>
 </html>
