@@ -4,80 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help Desk - Historial de Tickets</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-light">
 
-    <!-- CABECERA: Título superior estándar -->
-    <header>
-        <h1>Help Desk Data Center</h1>
-        <p>Sistema de Gestión de Incidentes Técnicos</p>
-    </header>
-
-    <!-- MENÚ DE NAVEGACIÓN: Enlaces activos del portal web -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio (Dashboard)</a></li>
-            <li><a href="reportar.html">Reportar Incidente</a></li>
-            <li><a href="tickets.html"><strong>Ver Historial de Tickets</strong></a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-uppercase text-primary" href="index.html">UTM HelpDesk</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reportar.html">Reportar Incidente</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tickets.html">Ver Tickets</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- CONTENIDO PRINCIPAL: Contenedor de la tabla operativa -->
-    <main>
-        <section>
-            <h2>Historial General de Incidentes Reportados</h2>
-            <p>A continuación se muestran los tickets registrados en la plataforma.</p>
+    <main class="container mt-4">
+    
+    <section class="row mb-4">
+        <div class="col-12">
+            <h2 class="fw-bold">Historial de Incidentes Reportados</h2>
+            <p class="text-muted">Consulte el estado en tiempo real de los reportes técnicos en la infraestructura UTM.</p>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-12">
             
-            <!-- TABLA DE DATOS: Estructura HTML5 limpia sin atributos de borde obsoletos -->
-            <table>
-                <caption>Monitoreo Activo de Fallos en el Data Center</caption>
-                
-                <!-- ENCABEZADO DE TABLA: Define los nombres de las columnas -->
-                <thead>
-                    <tr>
-                        <th id="th-id">ID Ticket</th>
-                        <th id="th-user">Usuario</th>
-                        <th id="th-cat">Categoría</th>
-                        <th id="th-desc">Descripción</th>
-                        <th id="th-status">Estado Actual</th>
-                    </tr>
-                </thead>
-                
-                <!-- CUERPO DE TABLA: Contiene las filas con los datos simulados (Singleton/Observer) -->
-                <tbody>
-                    <!-- FILA 1: Simulación de un incidente del área de redes -->
-                    <tr>
-                        <td headers="th-id">TK-2026-001</td>
-                        <td headers="th-user">Juan Minaya</td>
-                        <td headers="th-cat">Red</td>
-                        <td headers="th-desc">Pérdida de paquetes en el switch principal del rack B12.</td>
-                        <td headers="th-status"><strong>En Proceso</strong></td>
-                    </tr>
-                    <!-- FILA 2: Simulación de un incidente de infraestructura física -->
-                    <tr>
-                        <td headers="th-id">TK-2026-002</td>
-                        <td headers="th-user">Ana Rodríguez</td>
-                        <td headers="th-cat">Hardware</td>
-                        <td headers="th-desc">Alerta de sobrecalentamiento en el nodo de almacenamiento 04.</td>
-                        <td headers="th-status"><em>Abierto</em></td>
-                    </tr>
-                    <!-- FILA 3: Simulación de un incidente en la capa del sistema de software -->
-                    <tr>
-                        <td headers="th-id">TK-2026-003</td>
-                        <td headers="th-user">Carlos Mendoza</td>
-                        <td headers="th-cat">Software</td>
-                        <td headers="th-desc">Error 500 en el despliegue del microservicio de autenticación.</td>
-                        <td headers="th-status">Resuelto</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+            <div class="table-responsive card shadow-sm p-2">
+                <table class="table table-hover align-middle mb-0">
+                    
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" style="width: 10%">ID</th>
+                            <th scope="col" style="width: 40%">Asunto / Infraestructura</th>
+                            <th scope="col" style="width: 25%">Categoría</th>
+                            <th scope="col" style="width: 25%">Estado del Ticket</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="fw-bold">#0041</th>
+                            <td>Fallo de conexión en Laboratorio de Redes 3</td>
+                            <td><span class="badge bg-secondary">Conectividad</span></td>
+                            <td><span class="badge bg-danger p-2 text-uppercase">Abierto (Crítico)</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row" class="fw-bold">#0042</th>
+                            <td>Mantenimiento preventivo en Servidor Central UTM</td>
+                            <td><span class="badge bg-secondary">Hardware</span></td>
+                            <td><span class="badge bg-warning p-2 text-dark text-uppercase">En Progreso</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row" class="fw-bold">#0043</th>
+                            <td>Restablecimiento de acceso al Aula Virtual</td>
+                            <td><span class="badge bg-secondary">Sistemas</span></td>
+                            <td><span class="badge bg-success p-2 text-uppercase">Resuelto / Cerrado</span></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div></div>
+    </section>
+</main>
+
+<footer class="container text-center py-4 mt-5 border-top">
+    <p class="text-muted small">&copy; 2026 Data Center Corp. Todos los derechos reservados.</p>
+</footer>
 
     <!-- PIE DE PÁGINA: Cierre estructural de la página web -->
     <footer>
         <p>&copy; 2026 Data Center Corp. Estructura modular diseñada bajo validaciones semánticas.</p>
     </footer>
+
+<!--ayudante Scripts del bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
