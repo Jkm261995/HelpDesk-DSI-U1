@@ -1,0 +1,169 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN DEL DESIGN SYSTEM & VARIABLES (:root)
+   ========================================================================== */
+
+:root {
+    /* Paleta de colores corporativa para el Help Desk */
+    --color-primario: #1e3a8a;    /* Azul Oscuro: Para botones principales y títulos */
+    --color-secundario: #475569;  /* Gris Azulado: Para elementos secundarios */
+    --color-fondo: #f8fafc;       /* Blanco Grisáceo: Fondo general de la plataforma */
+    --color-texto: #0f172a;       /* Negro Pizarra: Para máxima legibilidad */
+    
+    /* Colores semánticos de estados (Exigidos en la guía) */
+    --color-exito: #16a34a;       /* Verde: Tickets resueltos o acciones correctas */
+    --color-advertencia: #ca8a04; /* Amarillo/Oro: Prioridades medias o advertencias */
+    --color-error: #dc2626;       /* Rojo: Incidentes críticos o botones de peligro */
+    
+    /* Tipografía base */
+    --fuente-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* RESET GENERAL: Regla obligatoria de box-sizing exigida por la rúbrica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garantiza que el padding no altere el ancho del modelo de cajas */
+}
+
+body {
+    font-family: var(--fuente-base);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. DESARROLLO DE COMPONENTES DE INTERFAZ (UI KIT)
+   ========================================================================== */
+
+/* --- BOTONES --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Botón Primario (Azul corporativo) */
+.btn-primary {
+    background-color: var(--color-primario);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #152e72; /* Un tono más oscuro al pasar el mouse */
+}
+.btn-primary:focus {
+    outline: 3px solid #60a5fa; /* Anillo de enfoque para accesibilidad */
+}
+
+/* Botón Secundario (Gris operativo) */
+.btn-secondary {
+    background-color: var(--color-secundario);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #334155;
+}
+.btn-secondary:focus {
+    outline: 3px solid #94a3b8;
+}
+
+/* Botón de Peligro (Rojo para incidentes críticos) */
+.btn-danger {
+    background-color: var(--color-error);
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #b91c1c;
+}
+.btn-danger:focus {
+    outline: 3px solid #fca5a5;
+}
+
+/* Efecto de presión al hacer clic en cualquier botón */
+.btn:active {
+    transform: scale(0.98);
+}
+
+
+/* --- FORMULARIOS --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Estilo unificado para inputs y selects (Campos de texto y desplegables) */
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto focus: Sombreado azul brillante solicitado al hacer clic */
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15);
+}
+
+
+/* --- TARJETAS (CARDS PARA TICKETS) --- */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+    /* Sombreado suave (box-shadow) exigido en las instrucciones */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-primario);
+}
+
+
+/* --- ALERTAS (BADGES DE PRIORIDAD) --- */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Variaciones de color según la prioridad del ticket */
+.badge-alta {
+    background-color: #fee2e2;
+    color: var(--color-error);
+}
+
+.badge-media {
+    background-color: #fef9c3;
+    color: var(--color-advertencia);
+}
+
+.badge-baja {
+    background-color: #dcfce7;
+    color: var(--color-exito);
+}
